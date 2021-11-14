@@ -12,10 +12,19 @@ function Todolist(props: PropsType){
                 <input/>
                 <button>+</button>
             </div>
-            <ul>
-                <li><input type="checkbox" checked={props.task[0].isDone}/> <span>{props.task[0].title}</span></li>
-                <li><input type="checkbox" checked={props.task[1].isDone}/> <span>{props.task[1].title}</span></li>
-                <li><input type="checkbox" checked={props.task[2].isDone}/> <span>{props.task[2].title}</span></li>
+           <ul>
+                <li>
+                    <input type="checkbox" checked={props.task[0].isDone}/>
+                    <span>{props.task[0].title}</span>
+                </li>
+                <li>
+                    <input type="checkbox" checked={props.task[1].isDone}/>
+                    <span>{props.task[1].title}</span>
+                </li>
+                <li>
+                    <input type="checkbox" checked={props.task[2].isDone}/>
+                    <span>{props.task[2].title}</span>
+                </li>
             </ul>
             <div>
                 <button>All</button>

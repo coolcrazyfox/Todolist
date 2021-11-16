@@ -9,6 +9,8 @@ export  type TaskType ={
     isDone:boolean
 }
 
+export  type FilterValuesType="all"|"active"|"completed"
+
 function App() {
     const toList="Books that I know"
 

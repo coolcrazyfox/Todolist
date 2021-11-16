@@ -8,6 +8,15 @@ type PropsType ={
 }
     
 function Todolist(props: PropsType){
+    const taskJSX = props.task.map(t=> {
+        return(
+            <li key={t.id}>
+                <input type="checkbox" checked={t.isDone}/>
+                <span>{t.title}</span>
+                <button onClick={()=>props.removeTask(t.id)}>Delete</button>
+            </li>
+        )
+    })
     return(
         <div>
             <h3>{props.title}</h3>
@@ -15,24 +24,21 @@ function Todolist(props: PropsType){
                 <input/>
                 <button>+</button>
             </div>
-           <ul>
-                <li>
-                    <input type="checkbox" checked={props.task[0].isDone}/>
-                    <span>{props.task[0].title}</span>
-                </li>
-                <li>
+            <ul>
+                {taskJSX}
+                {/* <li>
                     <input type="checkbox" checked={props.task[1].isDone}/>
                     <span>{props.task[1].title}</span>
                 </li>
                 <li>
                     <input type="checkbox" checked={props.task[2].isDone}/>
                     <span>{props.task[2].title}</span>
-                </li>
+                </li>*/}
             </ul>
             <div>
-                <button>All</button>
-                <button>Active</button>
-                <button>Completed</button>
+                <button onClick={()=> props.changeFilter("all")}>All</button>
+                <button onClick={()=> props.changeFilter("active")}>Active</button>
+                <button onClick={()=> props.changeFilter("completed")}>Completed</button>
             </div>
         </div>
     )
